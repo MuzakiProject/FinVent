@@ -2,4 +2,19 @@
 @plugin "flowbite-react/plugin/tailwindcss";
 @source "../.flowbite-react/class-list.json";
 
-@custom-variant dark (&:where(.dark, .dark *));
+@custom-variant dark (&:where(.));
+
+
+@theme {
+    --color-primary-50:  #ffffff; /* paling terang */
+    --color-primary-100: #f9f9f9;
+    --color-primary-200: #f2f2f2;
+    --color-primary-300: #eaeaea;
+    --color-primary-400: #e0e0e0;
+    --color-primary-500: #d6d6d6;
+    --color-primary-600: #c2c2c2;
+    --color-primary-700: #a8a8a8;
+    --color-primary-800: #8f8f8f;
+    --color-primary-900: #737373; /* paling gelap */
+  }
+  
