@@ -5,33 +5,33 @@ import { useState } from "react";
 const sideBarItems = [
     {
         name: "Dashboard",
-        icon: <SquaresFour size={32} />,
+        icon: <SquaresFour size={20} />,
         link: "/",
     },
     {
         name : "Transaksi",
-        icon: <HandCoins size={32} />,
+        icon: <HandCoins size={20} />,
         link: "/transaction",
     },
     {
         name : "Laporan Keuangan",
-        icon : <CurrencyCircleDollar size={32} />,
+        icon : <CurrencyCircleDollar size={20} />,
         link: "/financial-report",
     },
     {
         name : "Produk",
-        icon : <ShoppingBagOpen size={32} />,
+        icon : <ShoppingBagOpen size={20} />,
         link: "/product",
 
     },
     {
         name : "Laporan Stok",
-        icon : <Warehouse size={32} />,
+        icon : <Warehouse size={20} />,
         link: "/stock-report",
     },
     {
         name : "Aktivitas",
-        icon : <ClockCounterClockwise size={32} />,
+        icon : <ClockCounterClockwise size={20} />,
         link: "/activity",
     },
 ]
@@ -63,7 +63,7 @@ const Sidebar = () => {
                         <div className={`${itemActive === item.name ? "text-primary" : "text-black"}`}>
                             {item.icon}
                         </div>
-                        <p className={`${itemActive === item.name ? "text-primary" : "text-black"}`}>{item.name}</p>
+                        <p className={`${itemActive === item.name ? "text-primary" : "text-black"} text-sm`}>{item.name}</p>
                     </section>
                 </Link>
                 ))}
@@ -71,9 +71,9 @@ const Sidebar = () => {
 
             <div>
                 <Link to="/logout">
-                    <section className="flex gap-5 items-center absolute bottom-10 hover:bg-primary-2 transition-all duration-300 ease-in-out p-5 w-[90%] rounded-2xl">
+                    <section className="flex gap-5 items-center absolute bottom-10 hover:bg-primary-2 transition-all duration-300 ease-in-out p-5 w-[90%] rounded-2xl text-sm">
                         <div>
-                            <SignOut size={32} />
+                            <SignOut size={20} />
                         </div>
                         <p>Logout</p>
                     </section>
