@@ -3,7 +3,7 @@ import { Sidebar, SidebarCollapse, SidebarItem, SidebarItemGroup, SidebarItems }
 
 export function sidebar() {
   return (
-   <Sidebar aria-label="Sidebar with multi-level dropdown example">
+  <Sidebar className="border-e border-gray-200" aria-label="Sidebar with multi-level dropdown example">
     <h1 className="font-bold text-blue-600 p-5 pt-1 text-xl">FinVent</h1>
       <SidebarItems>
         <SidebarItemGroup>
