@@ -1,26 +1,23 @@
-
-import { Sidebar, SidebarItem, SidebarItemGroup, SidebarItems } from "flowbite-react";
+import { Sidebar, SidebarCollapse, SidebarItem, SidebarItemGroup, SidebarItems } from "flowbite-react";
 
 
 export function sidebar() {
   return (
-    <Sidebar className="h-full">
+   <Sidebar aria-label="Sidebar with multi-level dropdown example">
+    <h1 className="font-bold text-blue-600 p-5 pt-1 text-xl">FinVent</h1>
       <SidebarItems>
-        <span className="self-center whitespace-nowrap text-xl font-semibold text-blue-500 w-max ps-3 pt-5 pb-5">FinVent</span>
         <SidebarItemGroup>
+          <SidebarCollapse label="Dashboard">
+            <SidebarItem href="#">Financial</SidebarItem>
+            <SidebarItem href="#">Inventory</SidebarItem>
+          </SidebarCollapse>
           <SidebarItem href="#" >
-            Dashboard
-          </SidebarItem>
-          <SidebarItem href="#"  label="Pro" labelColor="dark">
-            Kanban
-          </SidebarItem>
-          <SidebarItem href="#"  label="3">
             Inbox
           </SidebarItem>
-          <SidebarItem href="#" >
+          <SidebarItem href="#">
             Users
           </SidebarItem>
-          <SidebarItem href="#" >
+          <SidebarItem href="#">
             Products
           </SidebarItem>
           <SidebarItem href="#" >

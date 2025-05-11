@@ -7,11 +7,11 @@ import Product from './pages/product';
 function App ()  {
   return (
     <Router>
-      <div className='grid  grid-cols-[250px_1fr] h-screen'>
-        <div className="side border">
+      <div className='grid  grid-cols-[255px_1fr] h-screen'>
+        <div className="side">
           <Sidebar/>
         </div>
-        <div className="main border">
+        <div className="main">
           <Routes>
             <Route path="/" element={<Dashboard />} />
             <Route path="/product" element={<Product />} />
