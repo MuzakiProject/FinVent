@@ -6,7 +6,9 @@
 
 
 @theme {
-    --color-primary-50:  #ffffff; /* paling terang */
+    --color-primary: #465FFF;
+    --color-primary-2 : #ECF3FF;
+    --color-primary-50:  #ffffff; 
     --color-primary-100: #f9f9f9;
     --color-primary-200: #f2f2f2;
     --color-primary-300: #eaeaea;
@@ -15,6 +17,6 @@
     --color-primary-600: #c2c2c2;
     --color-primary-700: #a8a8a8;
     --color-primary-800: #8f8f8f;
-    --color-primary-900: #737373; /* paling gelap */
+    --color-primary-900: #737373; 
   }
   
