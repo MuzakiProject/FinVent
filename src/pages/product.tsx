@@ -9,7 +9,7 @@ export default function product(){
         <main className="p-5 md:p-20">
 
             <h1 className="font-bold text-lg md:text-xl">Best Produk</h1>   
-            <div className="flex flex-wrap justify-center md:justify-start gap-4 mt-5">
+            <div className="grid grid-cols-2 lg:flex lg:flex-wrap gap-4 mt-5">
                 {productsData.map((product, index) => (
                         product.category == "Best Seller" ? (
                     <Card
@@ -26,7 +26,7 @@ export default function product(){
             </div>
 
             <h1 className="font-bold text-lg md:text-xl mt-10">List Produk</h1>
-            <div className="flex flex-wrap justify-center md:justify-start gap-4 mt-5">
+            <div className="grid grid-cols-2 lg:flex lg:flex-wrap gap-4 mt-5">
                 {productsData.map((product, index) => (
                     <Card
                         key={index}
