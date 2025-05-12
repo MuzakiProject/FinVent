@@ -52,7 +52,7 @@ const Sidebar = () => {
     }
 
     return (
-        <nav className={`border-r border-gray-300 bg-white h-screen fixed ${miniSideBar ? "w-22" : "w-64"}`}>
+        <nav className={`border-r border-gray-300 bg-white h-screen hidden md:block fixed ${miniSideBar ? "w-22" : "w-64"}`}>
             <div className={`mb-10 relative flex items-center ${miniSideBar ? "p-5" : ""}`}>
                 <h1 className="font-bold text-primary p-5 text-2xl">
                     {miniSideBar ? "F" : "FinVent"} 
