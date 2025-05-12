@@ -7,7 +7,7 @@ import Product from './pages/product';
 function App ()  {
   return (
     <Router>
-      <div className='grid  grid-cols-[255px_1fr] h-screen bg-gray-100'>
+      <div className='md:grid  md:grid-cols-[255px_1fr] h-screen bg-gray-100'>
         <div className="side">
           <Sidebar/>
         </div>
