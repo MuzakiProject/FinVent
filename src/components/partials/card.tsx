@@ -14,7 +14,7 @@ export default function Card({ name, price, stock,sold, image }: { name: string;
                     <p className="text-gray-600 text-sm">stock</p>
                 </div>
                 <div className="flex justify-between md:flex-col md:items-end">
-                     <p className="text-gray-600 text-xs">Price</p>
+                    <p className="text-gray-600 text-xs">Price</p>
                     <p className="text-black text-xs md:text-sm">Rp {price.toLocaleString()}</p>
                 </div>
             </div>
