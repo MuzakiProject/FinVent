@@ -72,16 +72,13 @@ export default function home(){
                     </div>
                     <div className="right w-full lg:w-[30%]">
                         <Card className="w-full h-full relative flex flex-col items-center justify-center p-6">
-                            {/* Centered content */}
                             <div className="z-10 flex justify-center items-center flex-col gap lg:gap-5">
                             <p className="font-bold text-2xl 2xl:text-4xl pt-4 lg:pt-0">100%</p>
                             <p className="bg-secondary-2 rounded-xl py-1 px-5 text-xs lg:text-base font-semibold text-secondary shadow-lg">^ 11</p>
                             </div>
 
-                            {/* Background circle (behind everything) */}
                             <div className="rounded-full w-50 h-50 lg:w-70 lg:h-70 border-[10px] border-primary absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
 
-                            {/* Message that overlaps part of the circle */}
                             <div className="bg-white z-20 relative  py-6 px-4 rounded-xl max-w-[300px] text-center">
                             <p className="font-light">Anda Mendapatkan Rp. 4.102.000 hari ini. Pertahankan kerja bagus anda</p>
                             </div>
