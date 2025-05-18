@@ -1,54 +1,48 @@
-# React + TypeScript + Vite
+# 📦 Finvent
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Finvent** adalah aplikasi manajemen inventori dan keuangan yang dirancang khusus untuk mendukung pertumbuhan UMKM. Aplikasi ini membantu pemilik usaha kecil mengelola stok barang, pencatatan transaksi keuangan, dan mendapatkan laporan yang mudah dibaca untuk pengambilan keputusan yang lebih cepat dan tepat.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Fitur Utama
 
-## Expanding the ESLint configuration
+- 📊 **Manajemen Keuangan**  
+  Catat pendapatan, pengeluaran, dan pantau arus kas usaha secara real-time.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- 📦 **Manajemen Inventori**  
+  Tambah, ubah, dan pantau stok barang dengan mudah. Sistem notifikasi untuk stok rendah juga tersedia.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-});
+- 🧾 **Laporan Otomatis**  
+  Dapatkan laporan keuangan dan inventori secara berkala (harian, mingguan, bulanan).
+
+- 👥 **Multi-User Role**  
+  Akses berbeda untuk pemilik, kasir, dan staf gudang.
+
+- 📱 **Responsif dan Mobile-Friendly**  
+  Dapat diakses dengan nyaman dari perangkat desktop maupun smartphone.
+
+---
+
+## 🚀 Teknologi yang Digunakan
+
+- **Frontend:** React / Tailwind CSS  
+
+
+## ⚙️ Instalasi
+
+### 1. Clone repository ini
+```bash
+git clone https://github.com/MuzakiProject/FinVent.git
+cd finvent
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 2. Install dependencies
 
-```js
-// eslint.config.js
-import reactX from "eslint-plugin-react-x";
-import reactDom from "eslint-plugin-react-dom";
+```bash
+npm install
+```
+### 3. Jalankan aplikasi
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    "react-x": reactX,
-    "react-dom": reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs["recommended-typescript"].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-});
+```bash
+npm dev
 ```
