@@ -10,7 +10,11 @@ import {
   NavbarBrand,
 } from "flowbite-react";
 
+import { BarChart, Bar, ResponsiveContainer, XAxis, YAxis } from 'recharts';
+import data from "../data/dashboard.chart";
+
 export default function home(){
+
     return(
         <>
             <Navbar className="border-b border-gray-200 bg-white p-5 sticky top-0 z-40" fluid>
@@ -55,14 +59,32 @@ export default function home(){
                                     <DropdownItem>Sign out</DropdownItem>
                                 </Dropdown>
                             </div>
-                            <div className="card-body">Card Body...</div>
+                            <div className="card-body">
+                                <ResponsiveContainer width="100%" height={300}>
+                                    <BarChart data={data} width={150} height={40}>
+                                         <XAxis dataKey="name" />
+                                         <Bar dataKey="value" fill="#8884d8" />
+                                         <YAxis />
+                                    </BarChart>
+                                </ResponsiveContainer>
+                            </div>
                         </Card>
                     </div>
                     <div className="right w-full lg:w-[30%]">
-                        <Card className="w-full h-full">
-                            <p className="font-light text-center">Anda Mendapatkan Rp. 4.102.000 hari ini. Pertahankan kerja bagus anda</p>
+                        <Card className="w-full h-full relative flex flex-col items-center justify-center p-6">
+                            <div className="z-10 flex justify-center items-center flex-col gap lg:gap-5">
+                            <p className="font-bold text-2xl 2xl:text-4xl pt-4 lg:pt-0">100%</p>
+                            <p className="bg-secondary-2 rounded-xl py-1 px-5 text-xs lg:text-base font-semibold text-secondary shadow-lg">^ 11</p>
+                            </div>
+
+                            <div className="rounded-full w-50 h-50 lg:w-70 lg:h-70 border-[10px] border-primary absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
+
+                            <div className="bg-white z-20 relative  py-6 px-4 rounded-xl max-w-[300px] text-center">
+                            <p className="font-light">Anda Mendapatkan Rp. 4.102.000 hari ini. Pertahankan kerja bagus anda</p>
+                            </div>
                         </Card>
                     </div>
+
                 </div>
 
                 <div className="table-dashboard shadow-md rounded">

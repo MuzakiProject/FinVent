@@ -9,6 +9,8 @@ import {
 } from "flowbite-react";
 import { Card } from "flowbite-react";
 import { Table, TableBody, TableCell, TableHead, TableHeadCell, TableRow } from "flowbite-react";
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import data from "../data/financial.chart";
 
 export default function financialreport(){
     return(
@@ -66,7 +68,21 @@ export default function financialreport(){
                                 <DropdownItem>Sign out</DropdownItem>
                             </Dropdown>
                         </div>
-                        <div className="card-body">Card Body...</div>
+                        <div className="card-body">
+                            <div className="card-body" style={{ height: '300px' }}>
+                            <ResponsiveContainer width="100%" height="100%">
+                                <LineChart data={data}>
+                                <CartesianGrid strokeDasharray="3 3" />
+                                <XAxis dataKey="name" />
+                                <YAxis />
+                                <Tooltip />
+                                <Legend />
+                                <Line type="monotone" dataKey="pemasukan" stroke="#8884d8" activeDot={{ r: 8 }} />
+                                <Line type="monotone" dataKey="pengeluaran" stroke="#82ca9d" />
+                                </LineChart>
+                            </ResponsiveContainer>
+                            </div>
+                        </div>
                     </Card>
                 </div>
                 <div className="table-activity shadow-md rounded mb-5">

@@ -1,6 +1,7 @@
 import { SquaresFour, HandCoins, CurrencyCircleDollar, ShoppingBagOpen, Warehouse, ClockCounterClockwise, SignOut, CaretLeft, CaretRight } from "@phosphor-icons/react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { useSidebar } from "../../data/context";
 
 const sideBarItems = [
     {
@@ -42,8 +43,10 @@ const sideBarItems = [
 const Sidebar = () => {
     const [itemActive, setItemActive] = useState("Dashboard");
 
-    const [miniSideBar ,setMiniSideBar] = useState(false);
+    // const [miniSideBar ,setMiniSideBar] = useState(false);
 
+    const { miniSideBar, setMiniSideBar } = useSidebar();
+    
     const handleMiniSideBar = () => {
         setMiniSideBar(!miniSideBar);
     }
