@@ -5,11 +5,17 @@ import Dashboard from './pages/dashboard';
 import Product from './pages/product';
 import Transaction from './pages/transaction';
 import Financialreport from './pages/financial-report';
+import { useSidebar } from './data/context';
 
 function App ()  {
+
+  const { miniSideBar } = useSidebar();
+  console.log(miniSideBar);
   return (
     <Router>
-      <div className='md:grid  md:grid-cols-[255px_1fr] h-screen'>
+      <div className={`md:grid h-screen transition-all duration-300 ${
+        miniSideBar ? "md:grid-cols-[90px_1fr]" : "md:grid-cols-[255px_1fr]"
+      }`}>
         <div className="side">
           <Sidebar/>
         </div>
@@ -28,3 +34,4 @@ function App ()  {
 };
 
 export default App;
+

@@ -9,8 +9,22 @@ import {
 } from "flowbite-react";
 import { Card } from "flowbite-react";
 import { Table, TableBody, TableCell, TableHead, TableHeadCell, TableRow } from "flowbite-react";
+import { BarChart, Bar, ResponsiveContainer, XAxis, YAxis } from 'recharts';
 
 export default function transaction(){
+
+    const data = [
+        { name: '07.00', value: 400 },
+        { name: '08.00', value: 300 },
+        { name: '09.00', value: 500 },
+        { name: '10.00', value: 200 },
+        { name: '11.00', value: 100 },
+        { name: '12.00', value: 300 },
+        { name: '13.00', value: 700 },
+        { name: '14.00', value: 100 },
+        { name: '15.00', value: 500 },
+    ];
+
     return(
         <>
             <Navbar className="border-b border-gray-200 bg-white p-5 sticky top-0 z-40" fluid>
@@ -43,7 +57,15 @@ export default function transaction(){
                             <DropdownItem>Sign out</DropdownItem>
                         </Dropdown>
                     </div>
-                    <div className="card-body">Card Body..</div>
+                    <div className="card-body">
+                        <ResponsiveContainer width="100%" height={300}>
+                            <BarChart data={data} width={150} height={40}>
+                                    <XAxis dataKey="name" />
+                                    <Bar dataKey="value" fill="#8884d8" />
+                                    <YAxis />
+                            </BarChart>
+                        </ResponsiveContainer>
+                    </div>
                 </Card>
                 <div className="table-dashboard shadow-md rounded">
                     <div className=" overflow-x-auto ">

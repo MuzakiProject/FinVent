@@ -13,7 +13,7 @@ import { Button, Modal, ModalBody, ModalFooter, ModalHeader, Select } from "flow
 import { useState } from "react";
 import { Label, FileInput, TextInput } from "flowbite-react";
 
-export default function product(){
+export default function Product(){
     
     const [openModal, setOpenModal] = useState(false);
     const [modalPlacement] = useState("center");
@@ -26,6 +26,7 @@ export default function product(){
                     <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Produk</span>
                 </NavbarBrand>
                 <div className="flex md:order-2">
+                    <Button onClick={() => setOpenModal(true)} className="bg-primary mr-10 hover:cursor-pointer transition-all duration-200">Add Product</Button>
                     <Dropdown arrowIcon={false} inline label={
                         <Avatar alt="User settings" img="https://flowbite.com/docs/images/people/profile-picture-5.jpg" rounded />}>
                         <DropdownHeader>
@@ -42,7 +43,7 @@ export default function product(){
             </Navbar>
             <main className="p-5 md:p-15">
                 <h1 className="font-bold text-lg md:text-xl">Best Produk</h1>   
-                <div className="grid grid-cols-2 lg:flex lg:flex-wrap gap-4 mt-5 justify-evenly gap-6">
+                <div className="grid grid-cols-2 lg:flex lg:flex-wrap gap-4 mt-5">
                     {productsData.map((product, index) => (
                             product.category == "Best Seller" ? (
                         <Card
@@ -59,9 +60,9 @@ export default function product(){
                 </div>
                 <div className="flex justify-between align-middle mt-10">
                     <h1 className="font-bold text-lg md:text-xl">List Produk</h1>
-                    <Button onClick={() => setOpenModal(true)} color="blue">Add Product</Button>
+
                 </div>
-                <div className="grid grid-cols-2 lg:flex lg:flex-wrap gap-4 mt-5 justify-evenly gap-6">
+                <div className="grid grid-cols-2 lg:flex lg:flex-wrap gap-4 mt-5">
                     {productsData.map((product, index) => (
                         <Card
                             key={index}
