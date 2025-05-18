@@ -14,7 +14,7 @@ import {
 
 export function footer() {
   return (
-    <Footer container>
+    <Footer className="rounded-none" container>
       <div className="w-full">
         <div className="grid w-full justify-between sm:flex sm:justify-between md:flex md:grid-cols-1">
           <div>
@@ -22,7 +22,7 @@ export function footer() {
               href="https://flowbite.com"
               src="https://flowbite.com/docs/images/logo.svg"
               alt="Flowbite Logo"
-              name="Flowbite"
+              name="FinVent"
             />
           </div>
           <div className="grid grid-cols-2 gap-8 sm:mt-4 sm:grid-cols-3 sm:gap-6">
