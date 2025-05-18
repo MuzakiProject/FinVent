@@ -11,20 +11,9 @@ import {
 } from "flowbite-react";
 
 import { BarChart, Bar, ResponsiveContainer, XAxis, YAxis } from 'recharts';
+import data from "../data/dashboard.chart";
 
 export default function home(){
-    const data = [
-        { name: 'Jan', value: 400 },
-        { name: 'Feb', value: 300 },
-        { name: 'Mar', value: 500 },
-        { name: 'Apr', value: 200 },
-        { name: 'Mei', value: 100 },
-        { name: 'Jun', value: 300 },
-        { name: 'Jul', value: 700 },
-        { name: 'Aug', value: 100 },
-        { name: 'Sep', value: 500 },
-    ];
-
 
     return(
         <>
@@ -82,15 +71,23 @@ export default function home(){
                         </Card>
                     </div>
                     <div className="right w-full lg:w-[30%]">
-                        <Card className="w-full h-full relative flex flex-col items-center">
-                            <div className="flex justify-center  items-center flex-col gap-5">
-                                <p className="font-bold text-4xl">100%</p>
-                                <p className="bg-secondary-2 rounded-xl py-1 px-5  font-semibold text-secondary shadow-lg">^ 11</p>
+                        <Card className="w-full h-full relative flex flex-col items-center justify-center p-6">
+                            {/* Centered content */}
+                            <div className="z-10 flex justify-center items-center flex-col gap lg:gap-5">
+                            <p className="font-bold text-2xl 2xl:text-4xl pt-4 lg:pt-0">100%</p>
+                            <p className="bg-secondary-2 rounded-xl py-1 px-5 text-xs lg:text-base font-semibold text-secondary shadow-lg">^ 11</p>
                             </div>
-                            <div className="rounded-full w-70 h-70 border-10 border-primary absolute top-60 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
-                            <p className="font-light text-center bg-white z-10 py-10 mt-3 max-w-[300px]">Anda Mendapatkan Rp. 4.102.000 hari ini. Pertahankan kerja bagus anda</p>
+
+                            {/* Background circle (behind everything) */}
+                            <div className="rounded-full w-50 h-50 lg:w-70 lg:h-70 border-[10px] border-primary absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
+
+                            {/* Message that overlaps part of the circle */}
+                            <div className="bg-white z-20 relative  py-6 px-4 rounded-xl max-w-[300px] text-center">
+                            <p className="font-light">Anda Mendapatkan Rp. 4.102.000 hari ini. Pertahankan kerja bagus anda</p>
+                            </div>
                         </Card>
                     </div>
+
                 </div>
 
                 <div className="table-dashboard shadow-md rounded">
