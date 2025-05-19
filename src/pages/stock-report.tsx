@@ -10,7 +10,7 @@ import {
 import { Card } from "flowbite-react";
 import { Table, TableBody, TableCell, TableHead, TableHeadCell, TableRow } from "flowbite-react";
 import data from "../data/dashboard.chart";
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, BarChart, Bar } from 'recharts';
+import { XAxis, YAxis, ResponsiveContainer, BarChart, Bar } from 'recharts';
 export default function stockreport(){
     return(
         <>

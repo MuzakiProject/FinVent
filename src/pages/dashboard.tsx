@@ -13,31 +13,15 @@ import {
 } from "flowbite-react";
 import { Button, Modal, ModalBody, ModalHeader } from "flowbite-react";
 import { useState } from "react";
-import axios from 'axios';
 import { BarChart, Bar, ResponsiveContainer, XAxis, YAxis } from 'recharts';
 import data from "../data/dashboard.chart";
+import Chatbot from "../components/chatbot/chat";
 
 export default function home(){
-    const [messages, setMessages] = useState<string[]>([]);
-    const [input, setInput] = useState('');
     const [openModal, setOpenModal] = useState(false);
     const [modalPlacement] = useState("center");
     const [modalSize] = useState<string>("4xl");
 
-    const sendMessage = async () => {
-        if (!input.trim()) return;
-
-        setMessages((prev) => [...prev, `You: ${input}`]);
-
-        try {
-        const response = await axios.post('http://localhost:5000/api/chat', { message: input });
-        setMessages((prev) => [...prev, `ChatGPT: ${response.data.reply}`]);
-        } catch (err) {
-        setMessages((prev) => [...prev, `ChatGPT: Terjadi kesalahan.`]);
-        }
-
-        setInput('');
-    };
     return(
         <>
             <Navbar className="border-b border-gray-200 bg-white p-5 sticky top-0 z-40" fluid>
@@ -202,22 +186,7 @@ export default function home(){
             <Modal size={modalSize} show={openModal} position={modalPlacement} onClose={() => setOpenModal(false)}>
                 <ModalHeader>AI Asisten Manajer</ModalHeader>
                 <ModalBody>
-                <div className="space-y-6">
-                    <div className="p-4 ">
-                        <div className=" rounded p-4 h-96 overflow-y-auto bg-white shadow">
-                            {messages.map((msg, idx) => (
-                            <div key={idx} className="mb-2">{msg}</div>
-                            ))}
-                        </div>
-                        <div className="relative w-full mt-4">
-                            <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                                <i className="fa-solid fa-robot text-gray-500"></i>
-                            </div>
-                            <input  onChange={(e) => setInput(e.target.value)} onKeyDown={(e) => e.key === 'Enter' && sendMessage()} id="simple-search" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Tanyakan apa saja..." required />
-                        </div>
-
-                    </div>
-                </div>
+                    <Chatbot />
                 </ModalBody>
             </Modal>
         </>
