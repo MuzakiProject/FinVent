@@ -8,6 +8,8 @@
 @theme {
     --color-primary: #465FFF;
     --color-primary-2 : #ECF3FF;
+    --color-secondary-2 : #ECFDF3;
+    --color-secondary : #559855
     --color-primary-50:  #ffffff; 
     --color-primary-100: #f9f9f9;
     --color-primary-200: #f2f2f2;

@@ -9,6 +9,8 @@ import {
 } from "flowbite-react";
 import { Card } from "flowbite-react";
 import { Table, TableBody, TableCell, TableHead, TableHeadCell, TableRow } from "flowbite-react";
+import { BarChart, Bar, ResponsiveContainer, XAxis, YAxis } from 'recharts';
+import data from "../data/transactions.chart";
 
 export default function transaction(){
     return(
@@ -43,7 +45,15 @@ export default function transaction(){
                             <DropdownItem>Sign out</DropdownItem>
                         </Dropdown>
                     </div>
-                    <div className="card-body">Card Body..</div>
+                    <div className="card-body">
+                        <ResponsiveContainer width="100%" height={300}>
+                            <BarChart data={data} width={150} height={40}>
+                                    <XAxis dataKey="name" />
+                                    <Bar dataKey="value" fill="#8884d8" />
+                                    <YAxis />
+                            </BarChart>
+                        </ResponsiveContainer>
+                    </div>
                 </Card>
                 <div className="table-dashboard shadow-md rounded">
                     <div className=" overflow-x-auto ">
