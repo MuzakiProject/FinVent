@@ -5,17 +5,16 @@ import {
   DropdownHeader,
   DropdownItem,
   Navbar,
-  NavbarBrand
+  NavbarBrand,
 } from "flowbite-react";
 import { Card } from "flowbite-react";
 import { Table, TableBody, TableCell, TableHead, TableHeadCell, TableRow } from "flowbite-react";
-
-export default function financialreport(){
+export default function stockreport(){
     return(
         <>
             <Navbar className="border-b border-gray-200 bg-white p-5 sticky top-0 z-40" fluid>
                 <NavbarBrand  href="https://flowbite-react.com">
-                    <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Laporan Keuangan</span>
+                    <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Laporan Stok</span>
                 </NavbarBrand>
                 <div className="flex md:order-2">
                     <Dropdown arrowIcon={false} inline label={
@@ -35,23 +34,23 @@ export default function financialreport(){
             <main className="p-5">
                 <div className="flex gap-6 mb-5">
                     <Card className="w-full">
-                        <i className="fa-solid fa-user-group bg-gray-200 w-fit p-3 rounded"></i>
-                        <p className="font-light">Total Pendapatan</p>
+                        <i className="fa-solid fa-box bg-gray-200 w-fit p-3 rounded"></i>
+                        <p className="font-light">Total Produk</p>
                         <h2 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">4012</h2>
                     </Card>
                     <Card className="w-full">
-                        <i className="fa-solid fa-money-bill-transfer bg-gray-200 w-fit p-3 rounded"></i>
-                        <p className="font-light">Total Pengeluaran</p>
+                        <i className="fa-solid fa-box-open bg-gray-200 w-fit p-3 rounded"></i>
+                        <p className="font-light">Total Stok</p>
                         <h2 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">4012</h2>
                     </Card>
                     <Card className="w-full">
-                        <i className="fa-solid fa-money-bill-trend-up bg-gray-200 w-fit p-3 rounded"></i>
-                        <p className="font-light">Laba Bersih</p>
+                        <i className="fa-solid fa-circle-exclamation bg-gray-200 w-fit p-3 rounded"></i>
+                        <p className="font-light">Stok Rendah</p>
                         <h2 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">4012</h2>
                     </Card>
                     <Card className="w-full">
-                        <i className="fa-solid fa-dollar-sign bg-gray-200 w-fit p-3 rounded"></i>
-                        <p className="font-light">Transaksi Tertunda</p>
+                        <i className="fa-solid fa-circle-xmark bg-gray-200 w-fit p-3 rounded"></i>
+                        <p className="font-light">Produk Habis</p>
                         <h2 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">4012</h2>
                     </Card>
                 </div>
@@ -74,7 +73,7 @@ export default function financialreport(){
                         <Table hoverable>
                             <TableHead>
                                 <TableRow className="border-b border-gray-200">
-                                    <TableHeadCell className="p-5 bg-white text-lg capitalize">Aktivitas Finansial</TableHeadCell>
+                                    <TableHeadCell className="p-5 bg-white text-lg capitalize">Aktivitas Stok Barang</TableHeadCell>
                                     <TableHeadCell className=" bg-white"></TableHeadCell>
                                     <TableHeadCell className=" bg-white"></TableHeadCell>
                                     <TableHeadCell className=" bg-white"></TableHeadCell>
@@ -85,7 +84,7 @@ export default function financialreport(){
                             <TableBody className="divide-y">
                                 <TableRow className="bg-white border-b border-gray-200 dark:border-gray-700 dark:bg-gray-800">
                                     <TableCell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                    Deskripsi
+                                    Nama Barang
                                     </TableCell>
                                     <TableCell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
                                     Tanggal
@@ -94,54 +93,30 @@ export default function financialreport(){
                                     Kategori
                                     </TableCell>
                                     <TableCell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                    Jenis
+                                    Jenis Aktivitas
                                     </TableCell>
                                     <TableCell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
                                     Jumlah
                                     </TableCell>
                                     <TableCell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                    Saldo
+                                    Keterangan
                                     </TableCell>
                                 </TableRow>
                                 <TableRow className="bg-white border-b border-gray-200 dark:border-gray-700 dark:bg-gray-800">
-                                    <TableCell>Lorem Ipsum Dolor Sit Amet..</TableCell>
+                                    <TableCell>Susu Murni 1 Liter</TableCell>
                                     <TableCell>12-02-2025</TableCell>
-                                    <TableCell>Pemasukan</TableCell>
-                                    <TableCell>Penjualan Barang</TableCell>
+                                    <TableCell>Minuman</TableCell>
+                                    <TableCell className="text-green-700">Masuk</TableCell>
                                     <TableCell>15</TableCell>
-                                    <TableCell className="text-green-700">Rp. 999.999,9</TableCell>
+                                    <TableCell>Lorem Ipsum Dolor Sit Amet..</TableCell>
                                 </TableRow>
                                 <TableRow className="bg-white border-b border-gray-200 dark:border-gray-700 dark:bg-gray-800">
-                                    <TableCell>Lorem Ipsum Dolor Sit Amet..</TableCell>
+                                    <TableCell>Minyak Goreng 1 Liter</TableCell>
                                     <TableCell>12-02-2025</TableCell>
-                                    <TableCell>Pengeluaran</TableCell>
-                                    <TableCell>Pembelian Stok Barang</TableCell>
+                                    <TableCell>Minuman</TableCell>
+                                    <TableCell className="text-red-700">Keluar</TableCell>
                                     <TableCell>15</TableCell>
-                                    <TableCell className="text-red-800">Rp. 999.999,9</TableCell>
-                                </TableRow>
-                                <TableRow className="bg-white border-b border-gray-200 dark:border-gray-700 dark:bg-gray-800">
                                     <TableCell>Lorem Ipsum Dolor Sit Amet..</TableCell>
-                                    <TableCell>12-02-2025</TableCell>
-                                    <TableCell>Pemasukan</TableCell>
-                                    <TableCell>Penjualan Barang</TableCell>
-                                    <TableCell>15</TableCell>
-                                    <TableCell className="text-green-700">Rp. 999.999,9</TableCell>
-                                </TableRow>
-                                <TableRow className="bg-white border-b border-gray-200 dark:border-gray-700 dark:bg-gray-800">
-                                    <TableCell>Lorem Ipsum Dolor Sit Amet..</TableCell>
-                                    <TableCell>12-02-2025</TableCell>
-                                    <TableCell>Pemasukan</TableCell>
-                                    <TableCell>Penjualan Barang</TableCell>
-                                    <TableCell>15</TableCell>
-                                    <TableCell className="text-green-700">Rp. 999.999,9</TableCell>
-                                </TableRow>
-                                <TableRow className="bg-white border-b border-gray-200 dark:border-gray-700 dark:bg-gray-800">
-                                    <TableCell>Lorem Ipsum Dolor Sit Amet..</TableCell>
-                                    <TableCell>12-02-2025</TableCell>
-                                    <TableCell>Pemasukan</TableCell>
-                                    <TableCell>Penjualan Barang</TableCell>
-                                    <TableCell>15</TableCell>
-                                    <TableCell className="text-green-700">Rp. 999.999,9</TableCell>
                                 </TableRow>
                             </TableBody>
                         </Table>
