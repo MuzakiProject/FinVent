@@ -39,22 +39,22 @@ export default function financialreport(){
                     <Card className="w-full">
                         <i className="fa-solid fa-user-group bg-gray-200 w-fit p-3 rounded"></i>
                         <p className="font-light">Total Pendapatan</p>
-                        <h2 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">4012</h2>
+                        <h2 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Rp 3.000..</h2>
                     </Card>
                     <Card className="w-full">
                         <i className="fa-solid fa-money-bill-transfer bg-gray-200 w-fit p-3 rounded"></i>
                         <p className="font-light">Total Pengeluaran</p>
-                        <h2 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">4012</h2>
+                        <h2 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Rp 1.211..</h2>
                     </Card>
                     <Card className="w-full">
                         <i className="fa-solid fa-money-bill-trend-up bg-gray-200 w-fit p-3 rounded"></i>
                         <p className="font-light">Laba Bersih</p>
-                        <h2 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">4012</h2>
+                        <h2 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Rp 1789..</h2>
                     </Card>
                     <Card className="w-full">
                         <i className="fa-solid fa-dollar-sign bg-gray-200 w-fit p-3 rounded"></i>
                         <p className="font-light">Transaksi Tertunda</p>
-                        <h2 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">4012</h2>
+                        <h2 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">2</h2>
                     </Card>
                 </div>
                 <div className="chart mb-5">

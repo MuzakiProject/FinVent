@@ -9,6 +9,8 @@ import {
 } from "flowbite-react";
 import { Card } from "flowbite-react";
 import { Table, TableBody, TableCell, TableHead, TableHeadCell, TableRow } from "flowbite-react";
+import data from "../data/dashboard.chart";
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, BarChart, Bar } from 'recharts';
 export default function stockreport(){
     return(
         <>
@@ -36,28 +38,28 @@ export default function stockreport(){
                     <Card className="w-full">
                         <i className="fa-solid fa-box bg-gray-200 w-fit p-3 rounded"></i>
                         <p className="font-light">Total Produk</p>
-                        <h2 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">4012</h2>
+                        <h2 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">32</h2>
                     </Card>
                     <Card className="w-full">
                         <i className="fa-solid fa-box-open bg-gray-200 w-fit p-3 rounded"></i>
                         <p className="font-light">Total Stok</p>
-                        <h2 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">4012</h2>
+                        <h2 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">2241</h2>
                     </Card>
                     <Card className="w-full">
                         <i className="fa-solid fa-circle-exclamation bg-gray-200 w-fit p-3 rounded"></i>
                         <p className="font-light">Stok Rendah</p>
-                        <h2 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">4012</h2>
+                        <h2 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">14</h2>
                     </Card>
                     <Card className="w-full">
                         <i className="fa-solid fa-circle-xmark bg-gray-200 w-fit p-3 rounded"></i>
                         <p className="font-light">Produk Habis</p>
-                        <h2 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">4012</h2>
+                        <h2 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">3</h2>
                     </Card>
                 </div>
                 <div className="chart mb-5">
                     <Card className="w-full">
                         <div className="flex justify-between align-middle">
-                            <h2 className="text-lg font-bold tracking-tight text-gray-900 dark:text-white">Penjualan Bulanan</h2>
+                            <h2 className="text-lg font-bold tracking-tight text-gray-900 dark:text-white">Aktivitas Barang hari ini</h2>
                             <Dropdown placement="left-start" label="" dismissOnClick={false} renderTrigger={() => <span><i className="fa-solid fa-ellipsis-vertical cursor-pointer"></i></span>}>
                                 <DropdownItem>Dashboard</DropdownItem>
                                 <DropdownItem>Settings</DropdownItem>
@@ -65,7 +67,15 @@ export default function stockreport(){
                                 <DropdownItem>Sign out</DropdownItem>
                             </Dropdown>
                         </div>
-                        <div className="card-body">Card Body...</div>
+                        <div className="card-body">
+                            <ResponsiveContainer width="100%" height={300}>
+                                <BarChart data={data} width={150} height={40}>
+                                        <XAxis dataKey="name" />
+                                        <Bar dataKey="value" fill="#8884d8" />
+                                        <YAxis />
+                                </BarChart>
+                            </ResponsiveContainer>
+                        </div>
                     </Card>
                 </div>
                 <div className="table-activity shadow-md rounded mb-5">

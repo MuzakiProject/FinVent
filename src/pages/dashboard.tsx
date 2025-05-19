@@ -11,9 +11,11 @@ import {
   NavbarCollapse,   
   NavbarLink
 } from "flowbite-react";
-import { Button, Modal, ModalBody, ModalFooter, ModalHeader, Select } from "flowbite-react";
+import { Button, Modal, ModalBody, ModalHeader } from "flowbite-react";
 import { useState } from "react";
 import axios from 'axios';
+import { BarChart, Bar, ResponsiveContainer, XAxis, YAxis } from 'recharts';
+import data from "../data/dashboard.chart";
 
 export default function home(){
     const [messages, setMessages] = useState<string[]>([]);
@@ -75,12 +77,12 @@ export default function home(){
                         <Card className="w-full sm:w-[48%] lg:w-[27vw]">
                             <i className="fa-solid fa-user-group bg-gray-200 w-fit p-3 rounded"></i>
                             <p className="font-light">Pelanggan</p>
-                            <h2 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">4012</h2>
+                            <h2 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">201</h2>
                         </Card>
                         <Card className="w-full sm:w-[48%] lg:w-[26.2vw]">
                             <i className="fa-solid fa-boxes-packing bg-gray-200 w-fit p-3 rounded"></i>
                             <p className="font-light">Total Penjualan</p>
-                            <h2 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">4012</h2>
+                            <h2 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">402</h2>
                         </Card>
                         <Card className="w-full">
                             <div className="flex justify-between align-middle">
@@ -92,7 +94,15 @@ export default function home(){
                                     <DropdownItem>Sign out</DropdownItem>
                                 </Dropdown>
                             </div>
-                            <div className="card-body">Card Body...</div>
+                            <div className="card-body">
+                                <ResponsiveContainer width="100%" height={300}>
+                                    <BarChart data={data} width={150} height={40}>
+                                            <XAxis dataKey="name" />
+                                            <Bar dataKey="value" fill="#8884d8" />
+                                            <YAxis />
+                                    </BarChart>
+                                </ResponsiveContainer>
+                            </div>
                         </Card>
                     </div>
                     <div className="right w-full lg:w-[30%]">
